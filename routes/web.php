@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SpaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/migrate/fresh', function () {
+    Artisan::call("migrate:fresh");
 });
+
+// Route::get("office",[CreditController::class,"office"]);
+
+Route::get('{path}', SpaController::class)->where('path', '(.*)');
