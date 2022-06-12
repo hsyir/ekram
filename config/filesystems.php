@@ -35,6 +35,11 @@ return [
             'root' => storage_path('app'),
             'throw' => false,
         ],
+        'ekram' => [
+            'driver' => 'local',
+            'root' => storage_path('ekram'),
+            'throw' => false,
+        ],
 
         'public' => [
             'driver' => 'local',

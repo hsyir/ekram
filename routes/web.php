@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\SpaController;
+use App\Imports\EkramImport;
+use App\Models\Child;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/migrate/fresh', function () {
     Artisan::call("migrate:fresh");
 });
+
+Route::get('/import', function () {
+    Excel::import(new EkramImport, "ekram.xls", "ekram");
+});
+
 
 // Route::get("office",[CreditController::class,"office"]);
 

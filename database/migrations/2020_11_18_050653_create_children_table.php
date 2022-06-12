@@ -22,7 +22,7 @@ class CreateChildrenTable extends Migration
             $table->string("mobile")->nullable();
             $table->string("phone")->nullable();
             $table->integer("sex")->nullable();
-            $table->integer("type")->nullable();
+            $table->integer("type")->nullable(); //1-> aytam, 2->mohsenin
             $table->integer("supporters_count")->nullable();
             $table->integer("support_amount_average")->nullable();
             $table->text("emotional_text")->nullable();
